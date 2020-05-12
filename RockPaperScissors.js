@@ -18,8 +18,21 @@ const computerChoices = ['r', 'p', 's'];
      
      if((userGuess === 'r') || (userGuess === 'p') || (userGuess === 's')) {
 
-        
+        if((userGuess === 'r' && computerGuess === 's')||
+           (userGuess === 'p' && computerGuess === 'r')||
+           (userGuess === 's' && computerGuess === 'p')){
+               wins++;
+           }else if (userGuess === computerGuess) {
+               ties++
+           }else {
+               losses++
+           }
+           diretionsText.textContent = '';
+
+           userchoiceText.textContent = 'you chose: '+userGuess;
+           computerChoiceText.textContent = 'The computer chose: ' + computerGuess;
+           winsText.textContent = 'wins: ' + wins;
+           lossesText.textContent = 'losses ' + losses;
+           tiesText.textContent = 'ties: ' + ties; 
      }
-
-
  }
